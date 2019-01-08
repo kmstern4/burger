@@ -1,29 +1,43 @@
-<h1>Eat-Da-Burger</h1>
 
-<h2>Burgers</h2>
+<div class="header">
+    <h1>Eat the Burger</h1>
+</div>
 
-<ul>
-    {{#each burgers}}
-        {{#unless eaten}}
-            {{> burgers/burger-block eat=true}}
-        {{/unless}}
-    {{/each}}
-</ul>
+<div class="container">
+    <div class="noteaten-div">
+        <h2 id="noteaten-text">Burgers</h2>
 
-<h2>Eaten Burgers</h2>
+        <ul class="noteaten-list">
+            {{#each burgers}}
+                {{#unless eaten}}
+                    {{> burgers/burger-block eat=true}}
+                {{/unless}}
+            {{/each}}
+        </ul>
 
-<ul>
-    {{#each burgers}}
-        {{#if eaten}}
-            {{> burgers/burger-block eaten=true}}
-        {{/if}}
-    {{/each}}
-</ul>
+        <img src="/assets/images/burgerplate.png" id="noteaten-img">
+    </div>
 
-<h2>Add a Burger</h2>
-<form class="create-burger">
-    <label for="burger">Burger</label>
-    <input type="text" id="burger" name="burger">
+    <div class="eaten-div">
+        <h2 id="eaten-text">Eaten</h2>
 
-    <button type="submit">Add Burger</button>
-</form>
+        <ul>
+            {{#each burgers}}
+                {{#if eaten}}
+                    {{> burgers/burger-block eaten=true}}
+                {{/if}}
+            {{/each}}
+        </ul>
+
+        <img src="/assets/images/empty.png" id="eaten-img">
+    </div>
+
+    <div class="form-div">
+        <form class="create-burger">
+            <label for="burger">Add a Burger</label><br>
+            <input type="text" id="burger" name="burger">
+
+            <button type="submit">Add Burger</button>
+        </form>
+    </div>
+</div>

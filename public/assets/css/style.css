@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display+SC');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC:700');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: "Montserrat", sans-serif;
+    color: #373737;
+}
+
+.header {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: "Playfair Display SC", serif;
+    color: #c0b283;
+    font-size: 50px;
+    text-shadow: 4px 3px 0 #dddddd;
+}
+
+/* .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.noteaten-div, .eaten-div {
+    width: 50%;
+}
+
+.form-div {
+    margin-top: 30px;
+} */
+
+.container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 10% 35% 10% 35% 10%;
+    grid-template-rows: 75% 25%;
+    grid-template-areas: 
+        " . noteaten . eaten . "
+        "form form form form form";
+    grid-column-gap: 0px;
+    grid-row-gap: 30px;
+}
+
+
+.noteaten-div {
+    grid-column-start: noteaten-start;
+    grid-column-end: noteaten-end;
+    grid-row-start: noteaten-start;
+    grid-row-end: noteaten-end;
+    text-align: center;
+}
+
+.eaten-div {
+    grid-column-start: eaten-start;
+    grid-column-end: eaten-end;
+    grid-row-start: eaten-start;
+    grid-row-end: eaten-end;
+    text-align: center;
+}
+
+.form-div {
+    grid-column-start: form-start;
+    grid-column-end: form-end;
+    grid-row-start: form-start;
+    grid-row-end: form-end;
+    justify-self: center;
+}
+
+#noteaten-text, #eaten-text {
+    font-family: "Playfair Display SC", serif;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+li {
+    margin: 5px 0;
+}
+
+ul {
+    margin-bottom: 20px;
+    height: 100px;
+}
